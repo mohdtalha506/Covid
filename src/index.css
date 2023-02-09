@@ -1,0 +1,45 @@
+/* ::-webkit-scrollbar {
+  display: none;
+} */
+
+body {
+  background-color: #e2e2e2;
+  font-family: "Lato", sans-serif;
+}
+
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+#contents {
+  position: relative;
+  transition: 0.3s;
+}
+
+.card:hover{
+   box-shadow: 0px 30px 18px -8px rgba(0,0,0,0.1);
+  transform: scale(1.05,1.05);
+}
+
+.death:hover{
+  background-color: rgb(216, 63, 63);
+  transform: scale(1.5);
+  
+}
+.recovered:hover{
+  background-color: rgb(108, 186, 66);
+}
+.activec:hover{
+  background-color: rgb(224, 108, 45);
+}
+.confirmed:hover{
+  background-color: rgba(235, 43, 25, 0.764);
+}
+
+tr:hover{
+    transform: scale(1.1);
+}
+
+
