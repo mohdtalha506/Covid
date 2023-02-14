@@ -45,7 +45,6 @@ return (
       <div className='card-text'>Active {data.active}</div>
       <div className='card-text'>Critical {data.critical}</div>
       <div className='card-text'>Cases {data.cases}</div>
-
     </div>
   </div>
 </div>
@@ -66,7 +65,7 @@ return (
 
  
 
-<CardGroup>{countries}</CardGroup>
+<CardGroup className='justify-content-center'>{countries}</CardGroup>
   </section>
 
     </>

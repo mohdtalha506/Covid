@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import Form from 'react-bootstrap/Form';
-import Card from './Card';
-import { CardGroup } from 'react-bootstrap';
+import Box from './Box';
+import CardGroup from 'react-bootstrap/CardGroup';
 
 const Countries = () => {
 
@@ -47,30 +47,37 @@ setCountryInfo(data)
 
 }
 const date = new Date(parseInt(countryInfo.updated));
-const lastupdated = date.toString();
+const lastupdated = date.toLocaleString();
 return (
 <>
 
-  <h4 className='d-flex justify-content-center fw-bold mt-4'>List of all countries across Worldwide</h4>
-  <div className='container-fluid p-3 d-flex justify-content-center'>
+  <section>
 
-    <Form.Select value={country.name} onChange={onCountryChange} className="w-50 ">
-      <option value="worldwide">worldwide</option>
-      {countries.map(country => <option value={country.value}> {country.name}
-      </option>)}
-
-    </Form.Select>
-  </div>
-
-  <CardGroup>
-    <div className='container fluid responsive'>
-      <Card title={"Confirmed"} text={countryInfo.cases} icon={ <i className='fa-solid fa-virus-covid fa-4x' style={{color:"red"}} /> } status={lastupdated} />
-      <Card title={"Active"} text={countryInfo.active} status={lastupdated} icon={<i className='fa-solid fa-chart-line fa-4x' style={{color:"orange"}} />}/>
-      <Card title={"Fatalities"} text={countryInfo.deaths} icon={<i className='fa-solid fa-skull fa-4x' style={{color:"Black"}} />} status={lastupdated} />
-      <Card title={"Recovered"} text={countryInfo.recovered} icon={<i className='fa-solid fa-heart-pulse fa-4x'style={{color:"green"}} />} status={lastupdated} />
+    <div className='container-fluid'>
+      <h4 className='text-center  fw-bold mt-4'>List of all countries across Worldwide</h4>
     </div>
-  </CardGroup>
 
+    <div className='container-fluid p-3 d-flex justify-content-center'>
+      <Form.Select value={country.name} onChange={onCountryChange} className="w-50 ">
+        <option value="worldwide">worldwide</option>
+        {countries.map(country => <option value={country.value}> {country.name}
+        </option>)}
+      </Form.Select>
+    </div>
+
+     <CardGroup className=' justify-content-center '>
+      
+        <Box title={"Confirmed"} text={countryInfo.cases} icon={ <i className='fa-solid fa-virus-covid fa-4x'
+          style={{color:"red"}} /> } status={lastupdated} />
+        <Box title={"Active"} text={countryInfo.active} status={lastupdated} icon={<i
+          className='fa-solid fa-chart-line fa-4x' style={{color:"orange"}} />}/>
+        <Box title={"Fatalities"} text={countryInfo.deaths} icon={<i className='fa-solid fa-skull fa-4x'
+          style={{color:"Black"}} />} status={lastupdated} />
+        <Box title={"Recovered"} text={countryInfo.recovered} icon={<i className='fa-solid fa-heart-pulse fa-4x'
+          style={{color:"green"}} />} status={lastupdated} />
+     </CardGroup>
+    
+  </section>
 </>
 )
 }

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 const Navbar = () => {
   return (
    <nav className="navbar  navbar-expand-lg navbar-dark bg-dark  p-2" >
-  {/* Container wrapper */}
+
   <div className="container-fluid">
      
     <a class="navbar-brand ms-1 text-uppercase fw-bold " href="#">
@@ -15,7 +15,7 @@ const Navbar = () => {
       />
       covid-19
     </a>
-    {/* Toggle button */}
+ 
     <button
       className="navbar-toggler"
       type="button"
@@ -27,9 +27,9 @@ const Navbar = () => {
     >
       <i className="fas fa-bars" />
     </button>
-    {/* Collapsible wrapper */}
+   
     <div className="collapse navbar-collapse " id="navbarRightAlignExample">
-      {/* Left links */}
+    
       <ul className="navbar-nav ms-auto pe-3 text-capitalize  fs-5">
         <li className="nav-item">
           <NavLink className="nav-link" to="/home" >     Overview      </NavLink>
@@ -44,15 +44,16 @@ const Navbar = () => {
         <li className="nav-item">
           <NavLink className="nav-link" to="/state" >    State     </NavLink>
         </li>   
+          
         <li className="nav-item">
           <NavLink className="nav-link" to="/search" >    Search     </NavLink>
         </li>   
       </ul>
-      {/* Left links */}
+      
     </div>
-    {/* Collapsible wrapper */}
+   
   </div>
-  {/* Container wrapper */}
+  
 </nav>
 
   )

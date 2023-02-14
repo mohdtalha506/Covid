@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 
 const Region = () => {
 
-
 const [continents, setContinents] = useState([]);
 const [continent, setContinent] = useState('worldwide');
 const [continentInfo, setContinentInfo] = useState([])
@@ -35,7 +34,7 @@ fetch("https://disease.sh/v3/covid-19/all")
 
 
 const onContinentChange = async e =>{
-const url = e.target.value === 'worldwide' ? 'https://disease.sh/v3/covid-19/all' :
+const url = e.target.value === 'India' ? 'https://disease.sh/v3/covid-19/all' :
 `https://disease.sh/v3/covid-19/continents/${e.target.value}`
 
 await fetch(url)
@@ -52,15 +51,18 @@ return (
  <h4 className='d-flex justify-content-center fw-bold mt-4'>Select Continent</h4>
     <div className=' container-fluid p-3 d-flex justify-content-center '>
         <Form.Select value={continent.name} onChange={onContinentChange} className="w-50">
+
             <option value="worldwide">worldwide</option>
-            {continents.map(continent => <option value={continent.value}> {continent.name}
-            </option>)}
+            {continents.map(continent => 
+                 <option value={continent.value}> {continent.name} </option>
+            )}
+
         </Form.Select>
     </div>
-        <div className='container-fluid mt-2 w-75'>
+        <div className='table-responsive mt-2 d-flex justify-content-center '>
 
-            <table className='table responsive'>
-                <thead className='table-active'>
+            <table className='table table-hover table-stripped w-75 '>
+                <thead className='table-active bg-dark text-white '>
                     <tr>
                         <th>S.N</th>
                         <th>Continent</th>
@@ -79,10 +81,10 @@ return (
                         <td> {continentInfo.recovered} </td>
                         <td> {continentInfo.deaths} </td>
                     </tr>
-
                 </tbody>
             </table>
         </div>
+        
 
 
 
