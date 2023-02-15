@@ -7,11 +7,11 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Graph = () => {
 
-  const [country, setCountry] = useState([]);
+  const [continent, setContinent] = useState([]);
   const [cases, setCases] = useState([]);
  
   useEffect(() => {
-    const getCountry=[];
+    const getContinent=[];
     const getcases=[];
     
     const getData=async()=>{
@@ -19,10 +19,10 @@ const Graph = () => {
       const resData= await reqData.json();
       for( let i=0; i<resData.length; i++)
       {
-        getCountry.push(resData[i].continent);
+        getContinent.push(resData[i].continent);
         getcases.push(resData[i].cases);
       }
-      setCountry(getCountry);
+      setContinent(getContinent);
       setCases(getcases);
       
     }
@@ -41,7 +41,7 @@ const Graph = () => {
       >
         <Doughnut
         data= {{
-           labels:country,
+           labels:continent,
            datasets:[
       {
         data:cases,
