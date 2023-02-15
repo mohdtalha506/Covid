@@ -54,7 +54,7 @@ return (
   <section>
 
     <div className='container-fluid'>
-      <h4 className='text-center  fw-bold mt-4'>List of all countries across Worldwide</h4>
+      <h4 className='text-center  fw-bold mt-4'>Select country across Worldwide</h4>
     </div>
 
     <div className='container-fluid p-3 d-flex justify-content-center'>

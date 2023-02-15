@@ -74,7 +74,7 @@ return (
       </Form>
     </div>
 
-     <div className='table-responsive-sm' >
+     <div className='table-responsive-sm m-2' >
        <table className='table table-striped table-hover'>
         <thead className='bg-dark text-white sticky-top'>
           <tr>

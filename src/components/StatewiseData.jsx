@@ -27,7 +27,7 @@ return (
 
     </div>
 
-    <div className='table-responsive d-flex justify-content-center' >
+    <div className='table-responsive-sm m-2' style={{height:"25rem"}}>
         <table className='table table-hover table-striped  '>
             <thead className='bg-dark text-white sticky-top'>
                 <tr>

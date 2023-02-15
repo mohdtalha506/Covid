@@ -1,6 +1,8 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form'
 import { useState, useEffect } from 'react'
+import Graph from './Graph';
+
 
 const Region = () => {
 
@@ -59,12 +61,11 @@ return (
 
         </Form.Select>
     </div>
-        <div className='table-responsive mt-2 d-flex justify-content-center '>
-
-            <table className='table table-hover table-stripped w-75 '>
+        <div className="container d-flex justify-content-center">
+                <div className='table-responsive-sm w-100 '>
+            <table className='table table-hover table-stripped  '>
                 <thead className='table-active bg-dark text-white '>
-                    <tr>
-                        <th>S.N</th>
+                    <tr> 
                         <th>Continent</th>
                         <th>Total</th>
                         <th>Active</th>
@@ -74,21 +75,20 @@ return (
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
                         <td>{continentInfo.continent}</td>
                         <td>{continentInfo.cases}</td>
-                        <td> {continentInfo.active} </td>
-                        <td> {continentInfo.recovered} </td>
-                        <td> {continentInfo.deaths} </td>
+                        <td>{continentInfo.active} </td>
+                        <td>{continentInfo.recovered} </td>
+                        <td>{continentInfo.deaths} </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        
 
-
-
-
+        </div>
+        <div>
+            <Graph />
+        </div>
 </>
 )
 }
