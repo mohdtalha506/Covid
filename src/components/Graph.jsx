@@ -39,7 +39,7 @@ const Graph = () => {
       >
         <Doughnut 
         data= {{
-           labels:country,
+           labels:continent,
            datasets:[
       {
         data:cases,
