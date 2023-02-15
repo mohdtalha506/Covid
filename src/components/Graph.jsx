@@ -32,16 +32,15 @@ const Graph = () => {
   
 
   return (
-    <div>
+    
       
       <div 
-      style={{padding:"20px",
-              width:"25rem" ,height:"25rem",margin:"auto"
-             }}    
+      
       >
-        <Doughnut
+        <Doughnut 
         data= {{
-           labels:country,
+           labels:country, 
+           
            datasets:[
       {
         data:cases,
@@ -58,7 +57,7 @@ const Graph = () => {
         </Doughnut>
 
       </div>
-    </div>
+
   );
 }
 

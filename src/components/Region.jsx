@@ -86,9 +86,11 @@ return (
         </div>
 
         </div>
-        <div>
-            <Graph />
-        </div>
+            <div className="container-fluid d-flex justify-content-center m-0 p-5 " >
+                <Graph/>
+            </div>
+          
+        
 </>
 )
 }
