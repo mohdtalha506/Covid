@@ -7,9 +7,11 @@ import Form from 'react-bootstrap/Form'
 import CountUp from 'react-countup';
 import Box from './Box';
 import CardGroup from 'react-bootstrap/CardGroup';
+import Load from './Load';
 
 const Home = () => {
 
+const [loading, setLoading] = useState(true)
 const [data, setData] = useState([]);
 const [result, setResult] = useState([]);
 const [searchCountries, setSearchCountries] = useState("");
@@ -23,6 +25,7 @@ axios.get('https://disease.sh/v3/covid-19/countries'),
 .then( res => {
 setData(res[0].data);
 setResult(res[1].data);
+setLoading(false);
 })
 .catch(err=>{
 console.log(err);
@@ -36,7 +39,11 @@ const filterCountries = result.filter(item =>{
 return searchCountries !=="" ? item.country.toLowerCase().includes(searchCountries.toLowerCase()) : item
 });
 
-
+if(loading){
+  return <>
+  <Load/>
+  </>
+}
 return (
 <>
 

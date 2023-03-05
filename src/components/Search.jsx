@@ -5,9 +5,11 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form'
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
+import Load from './Load';
 
 const Search = () => {
 
+const [loading, setLoading] = useState(true)
 const [data, setData] = useState([]);
 const [result, setResult] = useState([]);
 const [searchCountries, setSearchCountries] = useState("");
@@ -22,6 +24,7 @@ axios.get('https://disease.sh/v3/covid-19/countries'),
 .then( res => {
 setData(res[0].data);
 setResult(res[1].data);
+setLoading(false);
 })
 .catch(err=>{
 console.log(err);
@@ -50,6 +53,10 @@ return (
 </div>
 )
 })
+
+if(loading){
+  return<> <Load/> </>
+}
 
 return (
 <>

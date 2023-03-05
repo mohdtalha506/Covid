@@ -2,10 +2,12 @@ import React from 'react'
 import Form from 'react-bootstrap/Form'
 import { useState, useEffect } from 'react'
 import Graph from './Graph';
+import Load from './Load';
 
 
 const Region = () => {
 
+const [loading, setLoading] = useState(true)
 const [continents, setContinents] = useState([]);
 const [continent, setContinent] = useState('worldwide');
 const [continentInfo, setContinentInfo] = useState([])
@@ -22,6 +24,7 @@ value: item.continentInfo.iso2
 }
 ))
 setContinents(continents)
+setLoading(false);
 })
 }
 getData()
@@ -46,6 +49,9 @@ setContinent(e.target.value);
 setContinentInfo(data);
 })
 
+}
+if(loading){
+    return<> <Load/> </>
 }
 
 return (

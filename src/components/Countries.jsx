@@ -2,9 +2,11 @@ import React,{useState, useEffect} from 'react'
 import Form from 'react-bootstrap/Form';
 import Box from './Box';
 import CardGroup from 'react-bootstrap/CardGroup';
+import Load from './Load';
 
 const Countries = () => {
 
+const [loading, setLoading] = useState(true)
 const [countries, setCountries] = useState([]);
 const [country, setCountry] = useState('worldwide');
 const [countryInfo, setCountryInfo] = useState({})
@@ -22,6 +24,7 @@ index: item.index+1
 }
 ))
 setCountries(countries)
+setLoading(false);
 })
 }
 getData()
@@ -48,6 +51,12 @@ setCountryInfo(data)
 }
 const date = new Date(parseInt(countryInfo.updated));
 const lastupdated = date.toLocaleString();
+
+if(loading){
+  return(
+    <Load/>
+  );
+}
 return (
 <>
 

@@ -1,7 +1,11 @@
 import React,{useEffect, useState} from 'react';
+import Load from './Load';
 
 
 const StatewiseData = () => {
+
+    
+const [loading, setLoading] = useState(true)
 const [data, setData] = useState([]);
 const [total, setTotal] = useState([]);
 
@@ -9,15 +13,22 @@ const getCovidData = async () => {
 const res = await fetch('https://data.covid19india.org/data.json');
 const actualData = await res.json();
 console.log(actualData);
+setLoading(false)
 setData(actualData.statewise.slice(1));
 setTotal(actualData.statewise.slice(0,1));
 }
 
 useEffect(() => {
 getCovidData();
-}, [ ])
+}, [])
 
-
+if(loading){
+    return <>
+    
+    <Load />
+    </>
+    
+}
 return (
 <>
 
@@ -86,3 +97,5 @@ return (
 }
 
 export default StatewiseData
+// react spinner Loader ?
+//Install the package using npm
