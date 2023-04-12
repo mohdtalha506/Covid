@@ -15,9 +15,9 @@ const App = () => {
      <BrowserRouter>
      
       <Navbar />
+     
         <Routes>
-          <Route path='/' element={<Navigate to='/home'/>} />
-          <Route path='/home' element={<Home />} /> 
+          <Route path='/' element={<Home />} />
           <Route path='/countries' element={<Countries/> }/>
           <Route path='/region' element={<Region /> }/>
           <Route path='/state' element={<StatewiseData /> }/>
