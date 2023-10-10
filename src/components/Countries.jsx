@@ -85,7 +85,6 @@ return (
         <Box title={"Recovered"} text={countryInfo.recovered} icon={<i className='fa-solid fa-heart-pulse fa-4x'
           style={{color:"green"}} />} status={lastupdated} />
      </CardGroup>
-    
   </section>
 </>
 )

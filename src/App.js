@@ -7,24 +7,13 @@ import Home from './components/Home'
 import Search from './components/Search'
 import Region from './components/Region'
 import Countries from './components/Countries'
-
+import AllRoutes from './components/AllRoutes'
 
 const App = () => {
+ 
   return (
-    <>
-     <BrowserRouter>
-     
-      <Navbar />
-     
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/countries' element={<Countries/> }/>
-          <Route path='/region' element={<Region /> }/>
-          <Route path='/state' element={<StatewiseData /> }/>
-          <Route path='/search' element={<Search /> }/>
-        </Routes>
-     </BrowserRouter>
+    <> 
+     <AllRoutes/>
     </>
   )
 }
